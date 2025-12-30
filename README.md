@@ -146,7 +146,7 @@ Options:
   --file           read from file instead of stdin
   --config         read filename from pelias config (overrides --file)
   --pretty         indent output (stdout only)
-  --db             save to elasticsearch instead of printing to stdout
+  --db             save to opensearch instead of printing to stdout
 
 ```
 
@@ -158,7 +158,7 @@ Run a 'dry-run' of the import process:
 node ./bin/cli.js --config --pretty
 ```
 
-Import a specific file to elasticsearch:
+Import a specific file to opensearch:
 
 ```bash
 node ./bin/cli.js --file=/tmp/myfile.polylines --db

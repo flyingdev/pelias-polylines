@@ -17,7 +17,7 @@ if( argv.help ){
   console.error( '  --file           read from file instead of stdin');
   console.error( '  --config         read filename from pelias config (overrides --file)');
   console.error( '  --pretty         indent output (stdout only)');
-  console.error( '  --db             save to elasticsearch instead of printing to stdout\n');
+  console.error( '  --db             save to opensearch instead of printing to stdout\n');
   process.exit(0);
 }
 
@@ -58,7 +58,7 @@ else if( tty.isatty( process.stdin ) ){
 // read from stdin or file
 var input = argv.file ? fs.createReadStream( argv.file ) : process.stdin;
 
-// write to stdout or elasticsearch
+// write to stdout or opensearch
 var output = !!argv.db ? dbclient({name: 'polylines'}) : stringify;
 
 // run the importer
